@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { UppercaseDirective } from './uppercase.directive';
+import { ProdutoService } from './produto.service';
 
 const appRoutes: Routes = [
   { path: 'produtos', component: ProdutosComponent },
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     ListaProdutosComponent,
     ProdutosComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    UppercaseDirective
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    ProdutoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
